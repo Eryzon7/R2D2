@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Lnv+Xr4aiGE=",
+  "success": true,
+  "projectFilePath": "D:\\Code_projects\\C_C++\\R2D2\\R2D2_Remote_Control\\R2D2_Remote_Control.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ruben\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Ruben\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Ruben\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.0\\microsoft.io.recyclablememorystream.3.0.0.nupkg.sha512",
+    "C:\\Users\\Ruben\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruben\\.nuget\\packages\\system.threading.channels\\8.0.0\\system.threading.channels.8.0.0.nupkg.sha512",
+    "C:\\Users\\Ruben\\.nuget\\packages\\websocket.client\\5.2.0\\websocket.client.5.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
