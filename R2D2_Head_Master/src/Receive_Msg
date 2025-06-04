@@ -43,27 +43,31 @@ void onWebSocketEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsE
 
     for (size_t i = 0; i < len; i++) 
     {
-        lastCommand += (char)data[i];
+      lastCommand += (char)data[i];
     }
 
     if (lastCommand.startsWith("#") && lastCommand.endsWith("%")) 
     {
-        // Remove start and end markers for easier parsing
-        String cleanMsg = lastCommand.substring(1, lastCommand.length() - 1); // "servo,open,3"
+      // Remove start and end markers for easier parsing
+      String cleanMsg = lastCommand.substring(1, lastCommand.length() - 1); // "servo,open,3"
 
-        int commaIndex = cleanMsg.indexOf(',');
+      int commaIndex = cleanMsg.indexOf(',');
 
-        if (commaIndex != -1) 
-        {
-            SubSystem = cleanMsg.substring(0, commaIndex); // "servo"
-            String remaining = cleanMsg.substring(commaIndex + 1); // "open,3"
+      if (commaIndex != -1) 
+      {
+        SubSystem = cleanMsg.substring(0, commaIndex); // "servo"
+        String remaining = cleanMsg.substring(commaIndex + 1); // "open,3"
 
-            // Reconstruct message with type removed but markers kept
-            modifiedMsg = "#" + remaining + "%";
-        }
-        } else 
-        {
-        Serial.println("Invalid message format");
-        }
+        // Reconstruct message with type removed but markers kept
+        modifiedMsg = "#" + remaining + "%";
+      }
+
+      SwitchCommand(SubSystem);
+      
+    } 
+    else 
+    {
+      Serial.println("Invalid message format");
+    }
   }
 }

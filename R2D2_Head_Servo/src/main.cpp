@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include "Head_Servo.h"
 #include "Communication.h"
 
@@ -9,12 +8,20 @@ void setup()
   Wire.onRequest(requestEvent);
 
   Serial.begin(9600);
+
+  InitServos();
 }
-
-
 
 void loop() 
 {
+  OpenPanel(0);
+  delay(5000);
+  
+  ClosePanel(0);
+  delay(5000);
+
+
+  /*
   switch (Command)
   {
   case OPEN:
@@ -31,5 +38,5 @@ void loop()
 
   default:
     break;
-  }
+  }*/
 }

@@ -1,6 +1,9 @@
 #include "Communication.h"
 
-String command = "";
+String lastCommand = "";
+int commandData = 0;
+commandType Command = BASE;
+String command = "";  // local helper
 
 void SwitchCommand(String cmd) 
 {
@@ -12,7 +15,7 @@ void SwitchCommand(String cmd)
 
 void requestEvent() 
 {
-  Wire.write(("Ack: " + lastCommand).c_str());  // Reply with the last received command
+  Wire.write(("Ack: " + lastCommand).c_str());
 }
 
 void receiveEvent(int numBytes) 
@@ -24,19 +27,15 @@ void receiveEvent(int numBytes)
     lastCommand += c;
   }
 
-  // Check if the message starts with '#' and ends with '%'
   if (lastCommand.startsWith("#") && lastCommand.endsWith("%")) 
   {
-    // Strip start and end symbols
-    String content = lastCommand.substring(1, lastCommand.length() - 1);  // e.g., "open,3"
-
+    String content = lastCommand.substring(1, lastCommand.length() - 1);
     int commaIndex = content.indexOf(',');
     if (commaIndex > 0) 
     {
-      command = content.substring(0, commaIndex);        // e.g., "open"
-      String dataStr = content.substring(commaIndex + 1); // e.g., "3"
-      commandData = dataStr.toInt();                      // convert to integer
-
+      command = content.substring(0, commaIndex);
+      String dataStr = content.substring(commaIndex + 1);
+      commandData = dataStr.toInt();
       SwitchCommand(command);
     }
   }

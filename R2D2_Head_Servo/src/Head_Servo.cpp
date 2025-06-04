@@ -4,7 +4,7 @@ Servo myServos[6];
 int baseAngle = 90;      // Starting position
 int offset = 30;         // Degrees to move
 
-void setup() 
+void InitServos() 
 {
     myServos[0].attach(3);
     myServos[1].attach(4);

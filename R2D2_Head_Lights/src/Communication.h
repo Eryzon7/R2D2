@@ -3,19 +3,18 @@
 
 #include <Wire.h>
 
-extern String lastCommand;
-extern int commandData;
+String lastCommand;
+int commandData;
 
 
 enum commandType
 {
   BASE,
-  OPEN,
-  CLOSE,
-  WAVE
+  FLASHLIGHT,
+  SOUND
 };
 
-extern commandType Command;
+commandType Command;
 
 // Function prototype for request event handler
 void requestEvent();

@@ -15,7 +15,8 @@ enum subSystem
 
 subSystem subsystem;
 
-struct subSystemMap {
+struct subSystemMap 
+{
   const char* name;
   subSystem value;
 };
@@ -29,11 +30,6 @@ String modifiedMsg;
 void initWebSocket();
 
 // Internal WebSocket event handler
-void onWebSocketEvent(AsyncWebSocket *server,
-                      AsyncWebSocketClient *client,
-                      AwsEventType type,
-                      void *arg,
-                      uint8_t *data,
-                      size_t len);
+void onWebSocketEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len);
 
 #endif // WEBSOCKETHANDLER_H
