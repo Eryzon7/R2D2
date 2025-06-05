@@ -2,6 +2,10 @@
 
 AsyncWebSocket ws("/ws");
 
+subSystem subsystem;
+String SubSystem;
+String modifiedMsg;
+
 String command = "";
 
 const subSystemMap subsystemMap[] = 
@@ -11,7 +15,7 @@ const subSystemMap subsystemMap[] =
   {"sound", SOUND}
 };
 
-void SwitchCommand(String cmd) 
+void SwitchSubSystem(String cmd) 
 {
   for (auto& entry : subsystemMap) 
   {
@@ -23,7 +27,8 @@ void SwitchCommand(String cmd)
   }
 }
 
-void initWebSocket() {
+void initWebSocket() 
+{
   ws.onEvent(onWebSocketEvent);
 }
 
@@ -62,8 +67,7 @@ void onWebSocketEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsE
         modifiedMsg = "#" + remaining + "%";
       }
 
-      SwitchCommand(SubSystem);
-      
+      SwitchSubSystem(SubSystem);
     } 
     else 
     {

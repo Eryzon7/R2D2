@@ -33,11 +33,16 @@ void sendCommand(String cmd, int adress)
 {
   Wire.beginTransmission(adress);
   Wire.write(cmd.c_str());
-  Wire.endTransmission();
+  int result = Wire.endTransmission();
+  if (result != 0) 
+  {
+    Serial.printf("I2C Error: %d sending to 0x%02X\n", result, adress);
+  }
 }
 
 void loop() 
 {
+  ws.cleanupClients();
   switch (subsystem)
   {
   case SERVO:

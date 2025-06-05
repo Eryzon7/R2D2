@@ -13,7 +13,7 @@ enum subSystem
   SOUND
 };
 
-subSystem subsystem;
+extern subSystem subsystem;
 
 struct subSystemMap 
 {
@@ -23,8 +23,8 @@ struct subSystemMap
 
 void SwitchSubSystem(String cmd);
 
-String SubSystem;
-String modifiedMsg;
+extern String SubSystem;
+extern String modifiedMsg;
 
 // Function to initialize WebSocket and bind event handler
 void initWebSocket();

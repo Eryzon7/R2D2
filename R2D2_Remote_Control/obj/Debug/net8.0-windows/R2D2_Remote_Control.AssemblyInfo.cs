@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("R2D2_Remote_Control")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb72b7c9ba4b60b14b6b7c2e0ebe7894cf517ab0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+913f8f9836091c43639fda7b0fac0ec6b4f38876")]
 [assembly: System.Reflection.AssemblyProductAttribute("R2D2_Remote_Control")]
 [assembly: System.Reflection.AssemblyTitleAttribute("R2D2_Remote_Control")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
