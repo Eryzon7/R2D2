@@ -32,6 +32,7 @@
             lstLog = new ListBox();
             btnConnect = new Button();
             txtMessage = new TextBox();
+            msg_logs_label = new Label();
             SuspendLayout();
             // 
             // button1
@@ -40,7 +41,7 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "send msg";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -48,7 +49,7 @@
             // 
             lstLog.FormattingEnabled = true;
             lstLog.ItemHeight = 15;
-            lstLog.Location = new Point(450, 113);
+            lstLog.Location = new Point(426, 89);
             lstLog.Name = "lstLog";
             lstLog.Size = new Size(120, 94);
             lstLog.TabIndex = 1;
@@ -70,11 +71,21 @@
             txtMessage.Size = new Size(100, 23);
             txtMessage.TabIndex = 4;
             // 
+            // msg_logs_label
+            // 
+            msg_logs_label.AutoSize = true;
+            msg_logs_label.Location = new Point(426, 59);
+            msg_logs_label.Name = "msg_logs_label";
+            msg_logs_label.Size = new Size(55, 15);
+            msg_logs_label.TabIndex = 5;
+            msg_logs_label.Text = "msg logs";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(msg_logs_label);
             Controls.Add(txtMessage);
             Controls.Add(btnConnect);
             Controls.Add(lstLog);
@@ -91,5 +102,6 @@
         private ListBox lstLog;
         private Button btnConnect;
         private TextBox txtMessage;
+        private Label msg_logs_label;
     }
 }
